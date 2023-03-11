@@ -1,0 +1,19 @@
+moment.py è uno script che, dato un file nominato TTPs.txt (posizionato nella stessa folder dello script) contenente le TTP copiate e incollate dal sito del mitre, ad esempio (è importante che il formato di partenza sia proprio questo, anche lo spazio fra un blocco di righe di una TTP e il successivo. Se si copia e incolla dal sito del mitre questo è il formato di default) :
+
+...
+
+Enterprise	T1087	.003	Account Discovery: Email Account	
+Emotet has been observed leveraging a module that can scrape email addresses from Outlook.[3][4]
+
+Enterprise	T1560	Archive Collected Data	
+Emotet has been observed encrypting the data it collects before sending it to the C2 server. [5]
+
+...
+
+
+Modifica il file e vi inserisce le informazioni in maniera più ordinata, privata delle info inutili e adatta al parsing, come nelle seguenti righe:
+
+
+T1087	Account Discovery: Email AccountEmotet has been observed leveraging a module that can scrape email addresses from Outlook.
+
+T1560	Archive Collected DataEmotet has been observed encrypting the data it collects before sending it to the C2 server. 

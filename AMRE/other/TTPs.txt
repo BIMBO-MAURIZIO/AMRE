@@ -1,0 +1,74 @@
+T1071	Application Layer Protocol: Web Protocols	AuTo Stealer can use HTTP to communicate with its C2 servers.
+T1547	Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder	AuTo Stealer can place malicious executables in a victim's AutoRun registry key or StartUp directory, depending on the AV product installed, to maintain persistence.
+T1059	Command and Scripting Interpreter: Windows Command Shell	AuTo Stealer can use cmd.exe to execute a created batch file.
+T1005	Data from Local System	AuTo Stealer can collect data such as PowerPoint files, Word documents, Excel files, PDF files, text files, database files, and image files from an infected machine.
+T1074	Data Staged: Local Data Staging	AuTo Stealer can store collected data from an infected host to a file named Hostname_UserName.txt prior to exfiltration.
+T1041	Exfiltration Over C2 Channel	AuTo Stealer can exfiltrate data over actor-controlled C2 servers via HTTP or TCP.
+T1095	Non-Application Layer Protocol	AuTo Stealer can use TCP to communicate with command and control servers.
+T1518	Software Discovery: Security Software Discovery	AuTo Stealer has the ability to collect information about installed AV products from an infected host.
+T1082	System Information Discovery	AuTo Stealer has the ability to collect the hostname and OS information from an infected host.
+T1033	System Owner/User Discovery	AuTo Stealer has the ability to collect the username from an infected host.
+T1087	Account Discovery: Local Account	Agent Tesla can collect account information from the victim’s machine.
+T1071	Application Layer Protocol: Web Protocols	Agent Tesla has used HTTP for C2 communications.
+Application Layer Protocol: Mail Protocols	Agent Tesla has used SMTP for C2 communications.
+T1560	Archive Collected Data	Agent Tesla can encrypt data with 3DES before sending it over to a C2 server.
+T1547	Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder	Agent Tesla can add itself to the Registry as a startup program to establish persistence.
+T1185	Browser Session Hijacking	Agent Tesla has the ability to use form-grabbing to extract data from web data forms.
+T1115	Clipboard Data	Agent Tesla can steal data from the victim’s clipboard.
+T1555	Credentials from Password Stores	Agent Tesla has the ability to steal credentials from FTP clients and wireless profiles.
+Credentials from Web Browsers	Agent Tesla can gather credentials from a number of browsers.
+T1140	Deobfuscate/Decode Files or Information	Agent Tesla has the ability to decrypt strings encrypted with the Rijndael symmetric encryption algorithm.
+T1048	Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted Non-C2 Protocol	Agent Tesla has routines for exfiltration over SMTP, FTP, and HTTP.
+T1203	Exploitation for Client Execution	Agent Tesla has exploited Office vulnerabilities such as CVE-2017-11882 and CVE-2017-8570 for execution during delivery.
+T1564	Hide Artifacts: Hidden Files and Directories	Agent Tesla has created hidden folders.
+Hide Artifacts: Hidden Window	Agent Tesla has used ProcessWindowStyle.Hidden to hide windows.
+T1562	Impair Defenses: Disable or Modify Tools	Agent Tesla has the capability to kill any running analysis processes and AV software.
+T1105	Ingress Tool Transfer	Agent Tesla can download additional files for execution on the victim’s machine.
+T1056	Input Capture: Keylogging	Agent Tesla can log keystrokes on the victim’s machine.
+T1112	Modify Registry	Agent Tesla can achieve persistence by modifying Registry key entries.
+T1027	Obfuscated Files or Information	Agent Tesla has had its code obfuscated in an apparent attempt to make analysis difficult.
+T1566	Phishing: Spearphishing Attachment	The primary delivered mechaism for Agent Tesla is through email phishing messages.
+T1057	Process Discovery	Agent Tesla can list the current running processes on the system.
+T1055	Process Injection	Agent Tesla can inject into known, vulnerable binaries on targeted hosts.
+Process Hollowing	Agent Tesla has used process hollowing to create and manipulate processes through sections of unmapped memory by reallocating that space with its malicious code.
+T1053	Scheduled Task/Job: Scheduled Task	Agent Tesla has achieved persistence via scheduled tasks.
+T1113	Screen Capture	Agent Tesla can capture screenshots of the victim’s desktop.
+T1218	System Binary Proxy Execution: Regsvcs/Regasm	Agent Tesla has dropped RegAsm.exe onto systems for performing malicious activity.
+T1082	System Information Discovery	Agent Tesla can collect the system's computer name and also has the capability to collect information on the processor, memory, OS, and video card from the system.
+T1016	System Network Configuration Discovery	Agent Tesla can collect the IP address of the victim machine and spawn instances of netsh.exe to enumerate wireless settings.
+T1033	System Owner/User Discovery	Agent Tesla can collect the username from the victim’s machine.
+T1124	System Time Discovery	Agent Tesla can collect the timestamp from the victim’s machine.
+T1552	Unsecured Credentials: Credentials In Files	Agent Tesla has the ability to extract credentials from configuration or support files.
+Unsecured Credentials: Credentials in Registry	Agent Tesla has the ability to extract credentials from the Registry.
+T1204	User Execution: Malicious File	Agent Tesla has been executed through malicious e-mail attachments 
+T1125	Video Capture	Agent Tesla can access the victim’s webcam and record video.
+T1497	Virtualization/Sandbox Evasion	Agent Tesla has he ability to perform anti-sandboxing and anti-virtualization checks.
+T1047	Windows Management Instrumentation	Agent Tesla has used wmi queries to gather information from the system.
+T1087	Account Discovery: Email Account	Emotet has been observed leveraging a module that can scrape email addresses from Outlook.
+T1560	Archive Collected Data	Emotet has been observed encrypting the data it collects before sending it to the C2 server. 
+T1547	Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder	Emotet has been observed adding the downloaded payload to the HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run key to maintain persistence.
+T1110	Brute Force: Password Guessing	Emotet has been observed using a hard coded list of passwords to brute force user accounts. 
+T1059	Command and Scripting Interpreter: PowerShell	Emotet has used Powershell to retrieve the malicious payload and download additional resources like Mimikatz.
+Command and Scripting Interpreter: Windows Command Shell	Emotet has used cmd.exe to run a PowerShell script.
+Command and Scripting Interpreter: Visual Basic	Emotet has sent Microsoft Word documents with embedded macros that will invoke scripts to download additional payloads. 
+T1543	Create or Modify System Process: Windows Service	Emotet has been observed creating new services to maintain persistence. 
+T1555	Credentials from Password Stores: Credentials from Web Browsers	Emotet has been observed dropping browser password grabber modules. 
+T1114	Email Collection: Local Email Collection	Emotet has been observed leveraging a module that scrapes email data from Outlook.
+T1573	Encrypted Channel: Asymmetric Cryptography	Emotet is known to use RSA keys for encrypting C2 traffic. 
+T1041	Exfiltration Over C2 Channel	Emotet has been seen exfiltrating system information stored within cookies sent within an HTTP GET request back to its C2 servers. 
+T1210	Exploitation of Remote Services	Emotet has been seen exploiting SMB via a vulnerability exploit like EternalBlue (MS17-010) to achieve lateral movement and propagation. 
+T1040	Network Sniffing	Emotet has been observed to hook network APIs to monitor network traffic. 
+T1571	Non-Standard Port	Emotet has used HTTP over ports such as 20, 22, 7080, and 50000, in addition to using ports commonly associated with HTTP/S.
+T1027	Obfuscated Files or Information	Emotet has obfuscated macros within malicious documents to hide the URLs hosting the malware, CMD.exe arguments, and PowerShell scripts.
+Software Packing	Emotet has used custom packers to protect its payloads.
+T1003	OS Credential Dumping: LSASS Memory	Emotet has been observed dropping password grabber modules including Mimikatz. 
+T1566	Phishing: Spearphishing Attachment	Emotet has been delivered by phishing emails containing attachments.
+Phishing: Spearphishing Link	Emotet has been delivered by phishing emails containing links. 
+T1057	Process Discovery	Emotet has been observed enumerating local processes.
+T1055	Process Injection: Dynamic-link Library Injection	Emotet has been observed injecting in to Explorer.exe and other processes. 
+T1021	Remote Services: SMB/Windows Admin Shares	Emotet leverages the Admin$ share for lateral movement once the local admin password has been brute forced. 
+T1053	Scheduled Task/Job: Scheduled Task	Emotet has maintained persistence through a scheduled task. 
+T1552	Unsecured Credentials: Credentials In Files	Emotet has been observed leveraging a module that retrieves passwords stored on a system for the current logged-on user. 
+T1204	User Execution: Malicious Link	Emotet has relied upon users clicking on a malicious link delivered through spearphishing.
+User Execution: Malicious File	Emotet has relied upon users clicking on a malicious attachment delivered through spearphishing.
+T1078	Valid Accounts: Local Accounts	Emotet can brute force a local admin password, then use it to facilitate lateral movement.

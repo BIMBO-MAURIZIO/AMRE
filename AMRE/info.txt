@@ -1,0 +1,17 @@
+-The script has to run as root or as Admin (linux or windows)
+
+-The procedure supports linux and windows malware, not those running on macOS.
+
+-(In Windows)If powershell script execution is not permitted run as admin:
+Set-ExecutionPolicy RemoteSigned
+
+-Internet connection is necessary
+
+
+DEPENDENCIES:
+
+pip install nslookup
+
+ssdeep library. For Windows you can use: https://github.com/MacDue/ssdeep-windows-32_64
+
+aggiungi dipendenza da docker

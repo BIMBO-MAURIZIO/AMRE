@@ -1,0 +1,242 @@
+T1134	Access Token Manipulation: Create Process with Token	Azorult can call WTSQueryUserToken and CreateProcessAsUser to start a new process with local system privileges.
+T1555	Credentials from Password Stores: Credentials from Web Browsers	Azorult can steal credentials from the victim's browser.
+T1140	Deobfuscate/Decode Files or Information	Azorult uses an XOR key to decrypt content and uses Base64 to decode the C2 address.
+T1573	Encrypted Channel: Symmetric Cryptography	Azorult can encrypt C2 traffic using XOR.
+T1083	File and Directory Discovery	Azorult can recursively search for files in folders and collects files from the desktop with certain extensions.
+T1070	Indicator Removal: File Deletion	Azorult can delete files from victim machines.
+T1105	Ingress Tool Transfer	Azorult can download and execute additional files. Azorult has also downloaded a ransomware payload called Hermes.
+T1057	Process Discovery	Azorult can collect a list of running processes by calling CreateToolhelp32Snapshot.
+T1055	Process Injection: Process Hollowing	Azorult can decrypt the payload into memory, create a new suspended process of itself, then inject a decrypted payload to the new process and resume new process execution.
+T1012	Query Registry	Azorult can check for installed software on the system under the Registry key Software\Microsoft\Windows\CurrentVersion\Uninstall.
+T1113	Screen Capture	Azorult can capture screenshots of the victim’s machines.
+T1082	System Information Discovery	Azorult can collect the machine information, system architecture, the OS version, computer name, Windows product name, the number of CPU cores, video card information, and the system language.
+T1016	System Network Configuration Discovery	Azorult can collect host IP information from the victim’s machine.
+T1033	System Owner/User Discovery	Azorult can collect the username from the victim’s machine.
+T1124	System Time Discovery	Azorult can collect the time zone information from the system.
+T1552	Unsecured Credentials: Credentials In Files	Azorult can steal credentials in files belonging to common software such as Skype, Telegram, and Steam.
+T1071	Application Layer Protocol: Web Protocols	Ursnif has used HTTPS for C2.
+T1547	Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder	Ursnif has used Registry Run keys to establish automatic execution at system startup.
+T1185	Browser Session Hijacking	Ursnif has injected HTML codes into banking sites to steal sensitive online banking information (ex: usernames and passwords).
+T1059	Command and Scripting Interpreter: PowerShell	Ursnif droppers have used PowerShell in download cradles to download and execute the malware's full executable payload.
+Command and Scripting Interpreter: Visual Basic	Ursnif droppers have used VBA macros to download and execute the malware's full executable payload.
+T1543	Create or Modify System Process: Windows Service	Ursnif has registered itself as a system service in the Registry for automatic execution at system startup.
+T1132	Data Encoding	Ursnif has used encoded data in HTTP URLs for C2.
+T1005	Data from Local System	Ursnif has collected files from victim machines, including certificates and cookies.
+T1074	Data Staged: Local Data Staging	Ursnif has used tmp files to stage gathered information.
+T1140	Deobfuscate/Decode Files or Information	Ursnif has used crypto key information stored in the Registry to decrypt Tor clients dropped to disk.
+T1568	Dynamic Resolution: Domain Generation Algorithms	Ursnif has used a DGA to generate domain names for C2.
+T1041	Exfiltration Over C2 Channel	Ursnif has used HTTP POSTs to exfil gathered information.
+T1564	Hide Artifacts: Hidden Window	Ursnif droppers have used COM properties to execute malware in hidden windows.
+T1070	Indicator Removal: File Deletion	Ursnif has deleted data staged in tmp files after exfiltration.
+T1105	Ingress Tool Transfer	Ursnif has dropped payload and configuration files to disk. Ursnif has also been used to download and execute additional payloads.
+T1056	Input Capture: Credential API Hooking	Ursnif has hooked APIs to perform a wide variety of information theft, such as monitoring traffic from browsers.
+T1559	Inter-Process Communication: Component Object Model	Ursnif droppers have used COM objects to execute the malware's full executable payload.
+T1036	Masquerading: Match Legitimate Name or Location	Ursnif has used strings from legitimate system files and existing folders for its file, folder, and Registry entry names.
+T1112	Modify Registry	Ursnif has used Registry modifications as part of its installation routine.
+T1106	Native API	Ursnif has used CreateProcessW to create child processes.
+T1027	Obfuscated Files or Information	Ursnif has used an XOR-based algorithm to encrypt Tor clients dropped to disk.
+T1057	Process Discovery	Ursnif has gathered information about running processes.
+T1055	Process Injection: Thread Local Storage	Ursnif has injected code into target processes via thread local storage callbacks.
+Process Injection: Process Hollowing	Ursnif has used process hollowing to inject into child processes.
+T1090	Proxy	Ursnif has used a peer-to-peer (P2P) network for C2.
+Multi-hop Proxy	Ursnif has used Tor for C2.
+T1012	Query Registry	Ursnif has used Reg to query the Registry for installed programs.
+T1091	Replication Through Removable Media	Ursnif has copied itself to and infected removable drives for propagation.
+T1113	Screen Capture	Ursnif has used hooked APIs to take screenshots.
+T1082	System Information Discovery	Ursnif has used Systeminfo to gather system information.
+T1007	System Service Discovery	Ursnif has gathered information about running services.
+T1080	Taint Shared Content	Ursnif has copied itself to and infected files in network drives for propagation.
+T1497	Virtualization/Sandbox Evasion: Time Based Evasion	Ursnif has used a 30 minute delay after execution to evade sandbox monitoring tools.
+T1047	Windows Management Instrumentation	Ursnif droppers have used WMI classes to execute PowerShell commands.
+T1087	Account Discovery: Email Account	Emotet has been observed leveraging a module that can scrape email addresses from Outlook.
+T1560	Archive Collected Data	Emotet has been observed encrypting the data it collects before sending it to the C2 server. 
+T1547	Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder	Emotet has been observed adding the downloaded payload to the HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run key to maintain persistence.
+T1110	Brute Force: Password Guessing	Emotet has been observed using a hard coded list of passwords to brute force user accounts. 
+T1059	Command and Scripting Interpreter: PowerShell	Emotet has used Powershell to retrieve the malicious payload and download additional resources like Mimikatz.
+Command and Scripting Interpreter: Windows Command Shell	Emotet has used cmd.exe to run a PowerShell script.
+Command and Scripting Interpreter: Visual Basic	Emotet has sent Microsoft Word documents with embedded macros that will invoke scripts to download additional payloads. 
+T1543	Create or Modify System Process: Windows Service	Emotet has been observed creating new services to maintain persistence. 
+T1555	Credentials from Password Stores: Credentials from Web Browsers	Emotet has been observed dropping browser password grabber modules. 
+T1114	Email Collection: Local Email Collection	Emotet has been observed leveraging a module that scrapes email data from Outlook.
+T1573	Encrypted Channel: Asymmetric Cryptography	Emotet is known to use RSA keys for encrypting C2 traffic. 
+T1041	Exfiltration Over C2 Channel	Emotet has been seen exfiltrating system information stored within cookies sent within an HTTP GET request back to its C2 servers. 
+T1210	Exploitation of Remote Services	Emotet has been seen exploiting SMB via a vulnerability exploit like EternalBlue (MS17-010) to achieve lateral movement and propagation. 
+T1040	Network Sniffing	Emotet has been observed to hook network APIs to monitor network traffic. 
+T1571	Non-Standard Port	Emotet has used HTTP over ports such as 20, 22, 7080, and 50000, in addition to using ports commonly associated with HTTP/S.
+T1027	Obfuscated Files or Information	Emotet has obfuscated macros within malicious documents to hide the URLs hosting the malware, CMD.exe arguments, and PowerShell scripts.
+Software Packing	Emotet has used custom packers to protect its payloads.
+T1003	OS Credential Dumping: LSASS Memory	Emotet has been observed dropping password grabber modules including Mimikatz. 
+T1566	Phishing: Spearphishing Attachment	Emotet has been delivered by phishing emails containing attachments.
+Phishing: Spearphishing Link	Emotet has been delivered by phishing emails containing links. 
+T1057	Process Discovery	Emotet has been observed enumerating local processes.
+T1055	Process Injection: Dynamic-link Library Injection	Emotet has been observed injecting in to Explorer.exe and other processes. 
+T1021	Remote Services: SMB/Windows Admin Shares	Emotet leverages the Admin$ share for lateral movement once the local admin password has been brute forced. 
+T1053	Scheduled Task/Job: Scheduled Task	Emotet has maintained persistence through a scheduled task. 
+T1552	Unsecured Credentials: Credentials In Files	Emotet has been observed leveraging a module that retrieves passwords stored on a system for the current logged-on user. 
+T1204	User Execution: Malicious Link	Emotet has relied upon users clicking on a malicious link delivered through spearphishing.
+User Execution: Malicious File	Emotet has relied upon users clicking on a malicious attachment delivered through spearphishing.
+T1078	Valid Accounts: Local Accounts	Emotet can brute force a local admin password, then use it to facilitate lateral movement.
+T1047	Windows Management Instrumentation	Emotet has used WMI to execute powershell.exe.
+T1087	Account Discovery: Local Account	Agent Tesla can collect account information from the victim’s machine.
+T1071	Application Layer Protocol: Web Protocols	Agent Tesla has used HTTP for C2 communications.
+Application Layer Protocol: Mail Protocols	Agent Tesla has used SMTP for C2 communications.
+T1560	Archive Collected Data	Agent Tesla can encrypt data with 3DES before sending it over to a C2 server.
+T1547	Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder	Agent Tesla can add itself to the Registry as a startup program to establish persistence.
+T1185	Browser Session Hijacking	Agent Tesla has the ability to use form-grabbing to extract data from web data forms.
+T1115	Clipboard Data	Agent Tesla can steal data from the victim’s clipboard.
+T1555	Credentials from Password Stores	Agent Tesla has the ability to steal credentials from FTP clients and wireless profiles.
+Credentials from Web Browsers	Agent Tesla can gather credentials from a number of browsers.
+T1140	Deobfuscate/Decode Files or Information	Agent Tesla has the ability to decrypt strings encrypted with the Rijndael symmetric encryption algorithm.
+T1048	Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted Non-C2 Protocol	Agent Tesla has routines for exfiltration over SMTP, FTP, and HTTP.
+T1203	Exploitation for Client Execution	Agent Tesla has exploited Office vulnerabilities such as CVE-2017-11882 and CVE-2017-8570 for execution during delivery.
+T1564	Hide Artifacts: Hidden Files and Directories	Agent Tesla has created hidden folders.
+Hide Artifacts: Hidden Window	Agent Tesla has used ProcessWindowStyle.Hidden to hide windows.
+T1562	Impair Defenses: Disable or Modify Tools	Agent Tesla has the capability to kill any running analysis processes and AV software.
+T1105	Ingress Tool Transfer	Agent Tesla can download additional files for execution on the victim’s machine.
+T1056	Input Capture: Keylogging	Agent Tesla can log keystrokes on the victim’s machine.
+T1112	Modify Registry	Agent Tesla can achieve persistence by modifying Registry key entries.
+T1027	Obfuscated Files or Information	Agent Tesla has had its code obfuscated in an apparent attempt to make analysis difficult.
+T1566	Phishing: Spearphishing Attachment	The primary delivered mechaism for Agent Tesla is through email phishing messages.
+T1057	Process Discovery	Agent Tesla can list the current running processes on the system.
+T1055	Process Injection	Agent Tesla can inject into known, vulnerable binaries on targeted hosts.
+Process Hollowing	Agent Tesla has used process hollowing to create and manipulate processes through sections of unmapped memory by reallocating that space with its malicious code.
+T1053	Scheduled Task/Job: Scheduled Task	Agent Tesla has achieved persistence via scheduled tasks.
+T1113	Screen Capture	Agent Tesla can capture screenshots of the victim’s desktop.
+T1218	System Binary Proxy Execution: Regsvcs/Regasm	Agent Tesla has dropped RegAsm.exe onto systems for performing malicious activity.
+T1082	System Information Discovery	Agent Tesla can collect the system's computer name and also has the capability to collect information on the processor, memory, OS, and video card from the system.
+T1016	System Network Configuration Discovery	Agent Tesla can collect the IP address of the victim machine and spawn instances of netsh.exe to enumerate wireless settings.
+T1033	System Owner/User Discovery	Agent Tesla can collect the username from the victim’s machine.
+T1124	System Time Discovery	Agent Tesla can collect the timestamp from the victim’s machine.
+T1552	Unsecured Credentials: Credentials In Files	Agent Tesla has the ability to extract credentials from configuration or support files.
+Unsecured Credentials: Credentials in Registry	Agent Tesla has the ability to extract credentials from the Registry.
+T1204	User Execution: Malicious File	Agent Tesla has been executed through malicious e-mail attachments 
+T1125	Video Capture	Agent Tesla can access the victim’s webcam and record video.
+T1497	Virtualization/Sandbox Evasion	Agent Tesla has he ability to perform anti-sandboxing and anti-virtualization checks.
+T1047	Windows Management Instrumentation	Agent Tesla has used wmi queries to gather information from the system.
+T1547	Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder	Hancitor has added Registry Run keys to establish persistence.
+T1059	Command and Scripting Interpreter: PowerShell	Hancitor has used PowerShell to execute commands.
+T1140	Deobfuscate/Decode Files or Information	Hancitor has decoded Base64 encoded URLs to insert a recipient’s name into the filename of the Word document. Hancitor has also extracted executables from ZIP files.
+T1070	Indicator Removal: File Deletion	Hancitor has deleted files using the VBA kill function.
+T1105	Ingress Tool Transfer	Hancitor has the ability to download additional files from C2.
+T1106	Native API	Hancitor has used CallWindowProc and EnumResourceTypesA to interpret and execute shellcode.
+T1027	Obfuscated Files or Information	Hancitor has used Base64 to encode malicious links. Hancitor has also delivered compressed payloads in ZIP files to victims.
+T1566	Phishing: Spearphishing Attachment	Hancitor has been delivered via phishing emails with malicious attachments.
+Phishing: Spearphishing Link	Hancitor has been delivered via phishing emails which contained malicious links.
+T1218	System Binary Proxy Execution: Verclsid	Hancitor has used verclsid.exe to download and execute a malicious script.
+T1204	User Execution: Malicious Link	Hancitor has relied upon users clicking on a malicious link delivered through phishing.
+User Execution: Malicious File	Hancitor has used malicious Microsoft Word documents, sent via email, which prompted the victim to enable macros.
+T1497	Virtualization/Sandbox Evasion	Hancitor has used a macro to check that an ActiveDocument shape object in the lure message is present. If this object is not found, the macro will exit without downloading additional payloads.
+T1087	Account Discovery: Domain Account	IcedID can query LDAP to identify additional users on the network to infect.
+T1071	Application Layer Protocol: Web Protocols	IcedID has used HTTPS in communications with C2.
+T1547	Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder	IcedID has established persistence by creating a Registry run key.
+T1185	Browser Session Hijacking	IcedID has used web injection attacks to redirect victims to spoofed sites designed to harvest banking and other credentials. IcedID can use a self signed TLS certificate in connection with the spoofed site and simultaneously maintains a live connection with the legitimate site to display the correct URL and certificates in the browser.
+T1059	Command and Scripting Interpreter: Visual Basic	IcedID has used obfuscated VBA string expressions.
+T1573	Encrypted Channel: Asymmetric Cryptography	IcedID has used SSL and TLS in communications with C2.
+T1105	Ingress Tool Transfer	IcedID has the ability to download additional modules and a configuration file from C2.
+T1106	Native API	IcedID has called ZwWriteVirtualMemory, ZwProtectVirtualMemory, ZwQueueApcThread, and NtResumeThread to inject itself into a remote process.
+T1027	Obfuscated Files or Information	IcedID has utilzed encrypted binaries and base64 encoded strings.
+Software Packing	IcedID has packed and encrypted its loader module.
+Steganography	IcedID has embedded binaries within RC4 encrypted .png files.
+T1069	Permission Groups Discovery	IcedID has the ability to identify Workgroup membership.
+T1566	Phishing: Spearphishing Attachment	IcedID has been delivered via phishing e-mails with malicious attachments.
+T1055	Process Injection: Asynchronous Procedure Call	IcedID has used ZwQueueApcThread to inject itself into remote processes.
+T1053	Scheduled Task/Job: Scheduled Task	IcedID has created a scheduled task that executes every hour to establish persistence.
+T1218	System Binary Proxy Execution: Msiexec	IcedID can inject itself into a suspended msiexec.exe process to send beacons to C2 while appearing as a normal msi application. 
+T1082	System Information Discovery	IcedID has the ability to identify the computer name and OS version on a compromised host.
+T1204	User Execution: Malicious File	IcedID has been executed through Word documents with malicious embedded macros.
+T1047	Windows Management Instrumentation	IcedID has used WMI to execute binaries.
+T1548	Abuse Elevation Control Mechanism: Bypass User Account Control	Lokibot has utilized multiple techniques to bypass UAC.
+T1071	Application Layer Protocol: Web Protocols	Lokibot has used HTTP for C2 communications.
+T1059	Command and Scripting Interpreter: PowerShell	Lokibot has used PowerShell commands embedded inside batch scripts.
+Command and Scripting Interpreter: Windows Command Shell	Lokibot has used cmd /c commands embedded within batch scripts.
+Command and Scripting Interpreter: Visual Basic	Lokibot has used VBS scripts and XLS macros for execution.
+T1555	Credentials from Password Stores	Lokibot has stolen credentials from multiple applications and data sources including Windows OS credentials, email clients, FTP, and SFTP clients.
+Credentials from Web Browsers	Lokibot has demonstrated the ability to steal credentials from multiple applications and data sources including Safari and the Chromium and Mozilla Firefox-based web browsers.
+T1140	Deobfuscate/Decode Files or Information	Lokibot has decoded and decrypted its stages multiple times using hard-coded keys to deliver the final payload, and has decoded its server response hex string using XOR.
+T1041	Exfiltration Over C2 Channel	Lokibot has the ability to initiate contact with command and control (C2) to exfiltrate stolen data.
+T1083	File and Directory Discovery	Lokibot can search for specific files on an infected host.
+T1564	Hide Artifacts: Hidden Files and Directories	Lokibot has the ability to copy itself to a hidden file and directory.
+T1070	Indicator Removal: File Deletion	Lokibot will delete its dropped files after bypassing UAC.
+T1105	Ingress Tool Transfer	Lokibot downloaded several staged items onto the victim's machine.
+T1056	Input Capture: Keylogging	Lokibot has the ability to capture input on the compromised host via keylogging.
+T1112	Modify Registry	Lokibot has modified the Registry as part of its UAC bypass process.
+T1106	Native API	Lokibot has used LoadLibrary(), GetProcAddress() and CreateRemoteThread() API functions to execute its shellcode.
+T1027	Obfuscated Files or Information	Lokibot has obfuscated strings with base64 encoding.
+Software Packing	Lokibot has used several packing methods for obfuscation.
+T1566	Phishing: Spearphishing Attachment	Lokibot is delivered via a malicious XLS attachment contained within a spearhpishing email.
+T1055	Process Injection: Process Hollowing	Lokibot has used process hollowing to inject itself into legitimate Windows process.
+T1620	Reflective Code Loading	Lokibot has reflectively loaded the decoded DLL into memory.
+T1053	Scheduled Task/Job	Lokibot's second stage DLL has set a timer using "timeSetEvent" to schedule its next execution.
+Scheduled Task	Lokibot embedded the commands schtasks /Run /TN \Microsoft\Windows\DiskCleanup\SilentCleanup /I inside a batch script.
+T1082	System Information Discovery	Lokibot has the ability to discover the computer name and Windows product name/version.
+T1016	System Network Configuration Discovery	Lokibot has the ability to discover the domain name of the infected host.
+T1033	System Owner/User Discovery	Lokibot has the ability to discover the username on the infected host.
+T1204	User Execution: Malicious File	Lokibot has tricked recipients into enabling malicious macros by getting victims to click "enable content" in email attachments.
+T1497	Virtualization/Sandbox Evasion: Time Based Evasion	Lokibot has performed a time-based anti-debug check before downloading its third stage.
+T1087	Account Discovery: Local Account	Pony has used the NetUserEnum function to enumerate local accounts.
+T1071	Application Layer Protocol: Web Protocols	Pony has sent collected information to the C2 via HTTP POST request.
+T1110	Brute Force: Password Guessing	Pony has used a small dictionary of common passwords against a collected list of local accounts.
+T1059	Command and Scripting Interpreter: Windows Command Shell	Pony has used batch scripts to delete itself after execution.
+T1070	Indicator Removal: File Deletion	Pony has used scripts to delete itself after execution.
+T1105	Ingress Tool Transfer	Pony can download additional files onto the infected system.
+T1036	Masquerading: Match Legitimate Name or Location	Pony has used the Adobe Reader icon for the downloaded file to look more trustworthy.
+T1106	Native API	Pony has used several Windows functions for various purposes.
+T1027	Obfuscated Files or Information	Pony attachments have been delivered via compressed archive files. Pony also obfuscates the memory flow by adding junk instructions when executing to make analysis more difficult.
+T1566	Phishing: Spearphishing Attachment	Pony has been delivered via spearphishing attachments.
+Phishing: Spearphishing Link	Pony has been delivered via spearphishing emails which contained malicious links.
+T1082	System Information Discovery	Pony has collected the Service Pack, language, and region information to send to the C2.
+T1204	User Execution: Malicious Link	Pony has attempted to lure targets into clicking links in spoofed emails from legitimate banks.
+User Execution: Malicious File	Pony has attempted to lure targets into downloading an attached executable (ZIP, RAR, or CAB archives) or document (PDF or other MS Office format).
+T1497	Virtualization/Sandbox Evasion: Time Based Evasion	Pony has delayed execution using a built-in function to avoid detection and analysis.
+T1087	Account Discovery: Local Account	TrickBot collects the users of the system.
+Account Discovery: Email Account	TrickBot collects email addresses from Outlook.
+T1071	Application Layer Protocol: Web Protocols	TrickBot uses HTTPS to communicate with its C2 servers, to get malware updates, modules that perform most of the malware logic and various configuration files.
+T1547	Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder	TrickBot establishes persistence in the Startup folder.
+T1185	Browser Session Hijacking	TrickBot uses web injects and browser redirection to trick the user into providing their login credentials on a fake or modified web page.
+T1110	Brute Force: Credential Stuffing	TrickBot uses brute-force attack against RDP with rdpscanDll module.
+T1059	Command and Scripting Interpreter: PowerShell	TrickBot has been known to use PowerShell to download new payloads, open documents, and upload data to command and control servers.
+Command and Scripting Interpreter: Windows Command Shell	TrickBot has used macros in Excel documents to download and deploy the malware on the user’s machine.
+T1543	Create or Modify System Process: Windows Service	TrickBot establishes persistence by creating an autostart service that allows it to run whenever the machine boots.
+T1555	Credentials from Password Stores: Credentials from Web Browsers	TrickBot can obtain passwords stored in files from web browsers such as Chrome, Firefox, Internet Explorer, and Microsoft Edge, sometimes using esentutl.
+Credentials from Password Stores: Password Managers	TrickBot can steal passwords from the KeePass open source password manager.
+T1132	Data Encoding: Standard Encoding	TrickBot can Base64-encode C2 commands.
+T1005	Data from Local System	TrickBot collects local files and information from the victim’s local machine.
+T1140	Deobfuscate/Decode Files or Information	TrickBot decodes the configuration data and modules.
+T1482	Domain Trust Discovery	TrickBot can gather information about domain trusts by utilizing Nltest.
+T1573	Encrypted Channel: Symmetric Cryptography	TrickBot uses a custom crypter leveraging Microsoft’s CryptoAPI to encrypt C2 traffic.
+T1041	Exfiltration Over C2 Channel	TrickBot can send information about the compromised host and upload data to a hardcoded C2 server.
+T1210	Exploitation of Remote Services	TrickBot utilizes EternalBlue and EternalRomance exploits for lateral movement in the modules wormwinDll, wormDll, mwormDll, nwormDll, tabDll.
+T1008	Fallback Channels	TrickBot can use secondary C2 servers for communication after establishing connectivity and relaying victim information to primary C2 servers.
+T1083	File and Directory Discovery	TrickBot searches the system for all of the following file extensions: .avi, .mov, .mkv, .mpeg, .mpeg4, .mp4, .mp3, .wav, .ogg, .jpeg, .jpg, .png, .bmp, .gif, .tiff, .ico, .xlsx, and .zip. It can also obtain browsing history, cookies, and plug-in information.
+T1495	Firmware Corruption	TrickBot module "Trickboot" can write or erase the UEFI/BIOS firmware of a compromised device.
+T1562	Impair Defenses: Disable or Modify Tools	TrickBot can disable Windows Defender.
+T1105	Ingress Tool Transfer	TrickBot downloads several additional files and saves them to the victim's machine.
+T1056	Input Capture: Credential API Hooking	TrickBot has the ability to capture RDP credentials by capturing the CredEnumerateA API
+T1559	Inter-Process Communication: Component Object Model	TrickBot used COM to setup scheduled task for persistence.
+T1036	Masquerading	The TrickBot downloader has used an icon to appear as a Microsoft Word document.
+T1112	Modify Registry	TrickBot can modify registry entries.
+T1106	Native API	TrickBot uses the Windows API call, CreateProcessW(), to manage execution flow.
+T1135	Network Share Discovery	TrickBot module shareDll/mshareDll discovers network shares via the WNetOpenEnumA API.
+T1571	Non-Standard Port	Some TrickBot samples have used HTTP over ports 447 and 8082 for C2.
+T1027	Obfuscated Files or Information	TrickBot uses non-descriptive names to hide functionality and uses an AES CBC (256 bits) encryption algorithm for its loader and configuration files.
+Software Packing	TrickBot leverages a custom packer to obfuscate its functionality.
+T1069	Permission Groups Discovery	TrickBot can identify the groups the user on a compromised host belongs to.
+T1566	Phishing: Spearphishing Attachment	TrickBot has used an email with an Excel sheet containing a malicious macro to deploy the malware
+Phishing: Spearphishing Link	TrickBot has been delivered via malicious links in phishing e-mails.
+T1542	Pre-OS Boot: Bootkit	TrickBot can implant malicious code into a compromised device's firmware.
+T1057	Process Discovery	TrickBot uses module networkDll for process list discovery.
+T1055	Process Injection	TrickBot has used Nt* Native API functions to inject code into legitimate processes such as wermgr.exe.
+Process Hollowing	TrickBot injects into the svchost.exe process.
+T1090	Proxy: External Proxy	TrickBot has been known to reach a command and control server via one of nine proxy IP addresses. 
+T1219	Remote Access Software	TrickBot uses vncDll module to remote control the victim machine.
+T1021	Remote Services: VNC	TrickBot has used a VNC module to monitor the victim and collect information to pivot to valuable systems on the network 
+T1018	Remote System Discovery	TrickBot can enumerate computers and network devices.
+T1053	Scheduled Task/Job: Scheduled Task	TrickBot creates a scheduled task on the system that provides persistence.
+T1553	Subvert Trust Controls: Code Signing	TrickBot has come with a signed downloader component.
+T1082	System Information Discovery	TrickBot gathers the OS version, machine name, CPU type, amount of RAM available, and UEFI/BIOS firmware information from the victim’s machine.
+T1016	System Network Configuration Discovery	TrickBot obtains the IP address, location, and other relevant network information from the victim’s machine.
+T1033	System Owner/User Discovery	TrickBot can identify the user and groups the user belongs to on a compromised host.
+T1007	System Service Discovery	TrickBot collects a list of install programs and services on the system’s machine.
+T1552	Unsecured Credentials: Credentials In Files	TrickBot can obtain passwords stored in files from several applications such as Outlook, Filezilla, OpenSSH, OpenVPN and WinSCP.
+Unsecured Credentials: Credentials in Registry	TrickBot has retrieved PuTTY credentials by querying the Software\SimonTatham\Putty\Sessions registry key 
+T1204	User Execution: Malicious File	TrickBot has attempted to get users to launch malicious documents to deliver its payload. 
